@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e0e0f">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administración | AutoElite Motors</title>
+    <link rel="stylesheet" href="../public/css/variables.css">
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/admin.css">
+    <link rel="stylesheet" href="../public/css/responsive.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="../index.html">AutoElite <span>Motors</span></a>
+      <div class="user-box">
+        <div class="user-avatar">AD</div>
+        <span>Administración</span>
+        <button class="btn btn-secondary btn-small" type="button" id="logout-btn" hidden>Cerrar sesión</button>
+      </div>
+    </header>
+    <div class="page-title">
+      <h1>Administración</h1>
+      <p id="page-subtitle">Acceso restringido</p>
+    </div>
+    <main class="container">
+      <div id="alert" role="status" hidden></div>
+      <section class="panel admin-card" id="login-panel" hidden>
+        <div class="panel-title">Iniciar sesión</div>
+        <form class="form-grid admin-form-single" id="login-form" autocomplete="off">
+          <div class="field full">
+            <label for="usuario">Usuario</label>
+            <input id="usuario" name="usuario" required maxlength="100" autocomplete="username">
+          </div>
+          <div class="field full">
+            <label for="clave">Contraseña</label>
+            <input id="clave" name="clave" type="password" required maxlength="200" autocomplete="current-password">
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit" id="login-submit">Ingresar</button>
+          </div>
+        </form>
+      </section>
+      <section class="panel" id="admin-panel" hidden>
+        <div class="panel-title" id="form-title">Agregar empleado</div>
+        <form class="form-grid" id="empleado-form">
+          <input type="hidden" name="action" value="empleado_crear">
+          <input type="hidden" name="id" value="" disabled>
+          <div class="field">
+            <label for="tipo">Área *</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleccionar…</option>
+              <option value="vendedor">Asesor de ventas</option>
+              <option value="gerente_fi">Gerente financiero</option>
+              <option value="asesor_servicio">Asesor de servicio</option>
+              <option value="mecanico">Mecánico</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="nombre">Nombre completo *</label>
+            <input id="nombre" name="nombre" required minlength="2" maxlength="100">
+          </div>
+          <div class="field">
+            <label for="dni">DNI *</label>
+            <input id="dni" name="dni" required inputmode="numeric" maxlength="10" pattern="[0-9.\s]{7,10}" title="DNI de 7 u 8 dígitos" placeholder="Ej: 30123456">
+          </div>
+          <div class="field">
+            <label for="edad">Edad *</label>
+            <input id="edad" name="edad" type="number" required min="18" max="99" step="1" placeholder="Ej: 32">
+          </div>
+          <div class="field full">
+            <label for="direccion">Dirección *</label>
+            <input id="direccion" name="direccion" required minlength="5" maxlength="200" placeholder="Calle, número y localidad">
+          </div>
+          <div class="field full">
+            <label for="horario_trabajo">Horario de trabajo *</label>
+            <input id="horario_trabajo" name="horario_trabajo" required minlength="3" maxlength="100" placeholder="Ej: Lunes a Viernes de 9:00 a 18:00">
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit" id="empleado-submit">Agregar empleado</button>
+            <button class="btn btn-secondary" type="button" id="cancel-edit" hidden>Cancelar edición</button>
+          </div>
+        </form>
+      </section>
+      <section class="panel" id="lista-panel" hidden>
+        <div class="panel-title">Empleados registrados <span class="count" id="count">0</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Área</th>
+                <th>Nombre</th>
+                <th>DNI</th>
+                <th>Edad</th>
+                <th>Dirección</th>
+                <th>Horario de trabajo</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="empleados-body"></tbody>
+          </table>
+          <p class="empty-state" id="empleados-empty" hidden>No hay empleados cargados.</p>
+        </div>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> AutoElite Motors. Portal interno de gestión.</footer>
+    <script src="../public/js/admin.js" defer></script>
+  </body>
+</html>

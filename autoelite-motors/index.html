@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e0e0f">
+    <title>Panel principal | AutoElite Motors</title>
+    <link rel="stylesheet" href="public/css/variables.css">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/dashboard.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">AutoElite <span>Motors</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ <span class="sr-only">Abrir menú</span></button>
+      <nav class="main-nav" id="main-nav">
+        <a class="active" href="index.html">Panel principal</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="ventas.html">Ventas y recibos</a>
+        <a href="vehiculos.html">Inventario</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="reparaciones.html">Reparaciones</a>
+        <a href="soporte.html">Soporte</a>
+        <a href="admin/">Administración</a>
+      </nav>
+      <div class="user-box">
+        <div class="user-avatar">AE</div>
+        <span>Portal interno</span>
+      </div>
+    </header>
+    <div class="page-title">
+      <h1>Panel principal</h1>
+      <p>Gestión interna de clientes, vehículos y operaciones</p>
+    </div>
+    <main class="container">
+      <section class="stats-grid">
+        <a class="stat-card" href="vehiculos.html">
+          <span class="stat-icon">🚘</span>
+          <span class="stat-label">Vehículos disponibles</span>
+          <strong data-stat="disponibles">–</strong>
+        </a>
+        <a class="stat-card" href="vehiculos.html">
+          <span class="stat-icon">🔖</span>
+          <span class="stat-label">Vehículos reservados</span>
+          <strong data-stat="reservados">–</strong>
+        </a>
+        <a class="stat-card" href="vehiculos.html">
+          <span class="stat-icon">✓</span>
+          <span class="stat-label">Vehículos vendidos</span>
+          <strong data-stat="vendidos">–</strong>
+        </a>
+        <a class="stat-card" href="clientes.html">
+          <span class="stat-icon">👥</span>
+          <span class="stat-label">Clientes registrados</span>
+          <strong data-stat="clientes">–</strong>
+        </a>
+        <a class="stat-card" href="ventas.html">
+          <span class="stat-icon">🧾</span>
+          <span class="stat-label">Ventas registradas</span>
+          <strong data-stat="ventas">–</strong>
+        </a>
+        <a class="stat-card" href="reparaciones.html">
+          <span class="stat-icon">🔧</span>
+          <span class="stat-label">Reparaciones abiertas</span>
+          <strong data-stat="reparaciones">–</strong>
+        </a>
+      </section>
+      <section class="panel quick-actions">
+        <div class="panel-title">Accesos rápidos</div>
+        <div class="action-row">
+          <a class="btn" href="clientes.html">+ Registrar cliente</a>
+          <a class="btn" href="vehiculos.html">+ Cargar vehículo</a>
+          <a class="btn" href="ventas.html">+ Nueva venta</a>
+          <a class="btn btn-secondary" href="reparaciones.html">Nueva reparación</a>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Últimas ventas</div>
+        <div id="ultimas"></div>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> AutoElite Motors. Portal interno de gestión.</footer>
+    <script src="public/js/app.js" defer></script>
+    <script src="public/js/dashboard.js" defer></script>
+  </body>
+</html>

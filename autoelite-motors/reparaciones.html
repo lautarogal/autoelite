@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e0e0f">
+    <title>Órdenes de reparación | AutoElite Motors</title>
+    <link rel="stylesheet" href="public/css/variables.css">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">AutoElite <span>Motors</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ <span class="sr-only">Abrir menú</span></button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Panel principal</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="ventas.html">Ventas y recibos</a>
+        <a href="vehiculos.html">Inventario</a>
+        <a href="empleados.html">Empleados</a>
+        <a class="active" href="reparaciones.html">Reparaciones</a>
+        <a href="soporte.html">Soporte</a>
+        <a href="admin/">Administración</a>
+      </nav>
+      <div class="user-box">
+        <div class="user-avatar">AE</div>
+        <span>Portal interno</span>
+      </div>
+    </header>
+    <div class="page-title">
+      <h1>Órdenes de reparación</h1>
+      <p>Gestión interna de clientes, vehículos y operaciones</p>
+    </div>
+    <main class="container">
+      <section class="panel">
+        <div class="panel-title">Crear orden de reparación</div>
+        <p class="notice" id="repair-notice" hidden>Para crear órdenes se necesitan clientes, vehículos no vendidos y mecánicos cargados en la base.</p>
+        <form method="post" class="form-grid" id="repair-form" data-api="api/reparaciones.php" data-redirect="reparaciones.html">
+          <input type="hidden" name="action" value="reparacion_crear">
+          <div class="field">
+            <label for="cliente">Cliente *</label>
+            <select id="cliente" name="cliente" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="vin">Vehículo *</label>
+            <select id="vin" name="vin" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mecanico">Mecánico *</label>
+            <select id="mecanico" name="mecanico" required>
+              <option value="">Seleccionar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fecha_ingreso">Fecha de ingreso *</label>
+            <input id="fecha_ingreso" name="fecha_ingreso" type="date" required>
+          </div>
+          <div class="field">
+            <label for="fecha_salida">Fecha de salida</label>
+            <input id="fecha_salida" name="fecha_salida" type="date">
+            <small>Opcional. Si la dejás vacía, se completa sola al marcar la orden como Finalizada o Entregada.</small>
+          </div>
+          <div class="field">
+            <label for="costo">Costo estimado</label>
+            <input id="costo" name="costo" type="number" min="0" step="0.01" value="0">
+          </div>
+          <div class="field full">
+            <label for="diagnostico">Diagnóstico / descripción</label>
+            <textarea id="diagnostico" name="diagnostico" rows="3"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Crear orden</button>
+          </div>
+        </form>
+      </section>
+      <section class="panel">
+        <div class="panel-title">Órdenes de reparación</div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>N.º</th>
+                <th>Ingreso</th>
+                <th>Salida</th>
+                <th>Cliente</th>
+                <th>Vehículo</th>
+                <th>Mecánico</th>
+                <th>Diagnóstico</th>
+                <th>Costo</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="reparaciones-body"></tbody>
+          </table>
+          <p class="empty-state" id="empty" hidden>No hay órdenes de reparación.</p>
+        </div>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> AutoElite Motors. Portal interno de gestión.</footer>
+    <script src="public/js/app.js" defer></script>
+    <script src="public/js/reparaciones.js" defer></script>
+  </body>
+</html>

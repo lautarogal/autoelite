@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e0e0f">
+    <title>Soporte técnico | AutoElite Motors</title>
+    <link rel="stylesheet" href="public/css/variables.css">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/soporte.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">AutoElite <span>Motors</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ <span class="sr-only">Abrir menú</span></button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Panel principal</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="ventas.html">Ventas y recibos</a>
+        <a href="vehiculos.html">Inventario</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="reparaciones.html">Reparaciones</a>
+        <a class="active" href="soporte.html">Soporte</a>
+        <a href="admin/">Administración</a>
+      </nav>
+      <div class="user-box">
+        <div class="user-avatar">AE</div>
+        <span>Portal interno</span>
+      </div>
+    </header>
+    <div class="page-title">
+      <h1>Soporte técnico</h1>
+      <p>Gestión interna de clientes, vehículos y operaciones</p>
+    </div>
+    <main class="container">
+      <section class="panel support-card">
+        <div class="panel-title">Centro de soporte</div>
+        <p>Esta sección reúne indicaciones para resolver los problemas más habituales del portal.</p>
+        <h3>No conecta con MySQL</h3>
+        <ul>
+          <li>Verificá que Apache y MySQL estén iniciados en XAMPP.</li>
+          <li>Revisá los valores de <code>DB_HOST</code>, <code>DB_PORT</code>, <code>DB_DATABASE</code>, <code>DB_USERNAME</code> y <code>DB_PASSWORD</code> en el archivo <code>.env</code>.</li>
+          <li>Confirmá en phpMyAdmin que exista la base <code>concesionaria</code> y sus tablas.</li>
+        </ul>
+        <h3>No puedo registrar una venta</h3>
+        <ul>
+          <li>Debe existir un cliente, un asesor de ventas y un vehículo con estado Disponible.</li>
+          <li>Verificá que el vehículo no esté vinculado a una venta anterior.</li>
+          <li>Las restricciones de claves foráneas de MySQL se respetan para evitar datos inconsistentes.</li>
+        </ul>
+        <h3>Datos de contacto</h3>
+        <p>Configurá aquí los datos reales de soporte de la concesionaria antes de publicar el sistema. No se incluyeron teléfonos ni correos sin confirmar.</p>
+      </section>
+    </main>
+    <footer>© <span id="year"></span> AutoElite Motors. Portal interno de gestión.</footer>
+    <script src="public/js/app.js" defer></script>
+  </body>
+</html>

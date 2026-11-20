@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e0e0f">
+    <title>Recibo interno | AutoElite Motors</title>
+    <link rel="stylesheet" href="public/css/variables.css">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/header.css">
+    <link rel="stylesheet" href="public/css/recibos.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">AutoElite <span>Motors</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ <span class="sr-only">Abrir menú</span></button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Panel principal</a>
+        <a href="clientes.html">Clientes</a>
+        <a class="active" href="ventas.html">Ventas y recibos</a>
+        <a href="vehiculos.html">Inventario</a>
+        <a href="empleados.html">Empleados</a>
+        <a href="reparaciones.html">Reparaciones</a>
+        <a href="soporte.html">Soporte</a>
+        <a href="admin/">Administración</a>
+      </nav>
+      <div class="user-box">
+        <div class="user-avatar">AE</div>
+        <span>Portal interno</span>
+      </div>
+    </header>
+    <div class="page-title">
+      <h1>Recibo interno</h1>
+      <p>Gestión interna de clientes, vehículos y operaciones</p>
+    </div>
+    <main class="container">
+      <div id="recibo-root"></div>
+    </main>
+    <footer>© <span id="year"></span> AutoElite Motors. Portal interno de gestión.</footer>
+    <script src="public/js/app.js" defer></script>
+    <script src="public/js/recibo.js" defer></script>
+  </body>
+</html>

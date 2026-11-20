@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoElite Motors - Portal Interno</title>
+<style>
+  :root{
+    --bg-body:#0e0e0f;
+    --bg-panel:#161617;
+    --bg-panel-2:#1b1b1c;
+    --bg-input:#232324;
+    --border-color:#2c2c2e;
+    --red:#e21f26;
+    --red-dark:#a3151a;
+    --text-main:#f2f2f2;
+    --text-muted:#9a9a9d;
+    --text-faint:#6b6b6e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg-body);
+    color:var(--text-main);
+    font-family:'Segoe UI', Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===================== SECCIÓN 1: BARRA DE NAVEGADOR + HEADER ===================== */
+  .browser-bar{
+    background:#dcdcdc;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 16px;
+  }
+  .browser-dots{display:flex;gap:6px;}
+  .browser-dots span{width:11px;height:11px;border-radius:50%;background:#8a8a8a;display:inline-block;}
+  .browser-url{
+    flex:1;
+    background:#f4f4f4;
+    color:#444;
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:14px;
+    text-align:center;
+  }
+
+  .site-header{
+    background:var(--bg-panel);
+    border-bottom:1px solid var(--border-color);
+    padding:16px 32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:0.5px;
+  }
+  .logo span{color:var(--red);}
+
+  .main-nav{
+    display:flex;
+    gap:28px;
+    font-size:14px;
+    color:var(--text-muted);
+  }
+  .main-nav a{
+    color:var(--text-muted);
+    text-decoration:none;
+  }
+  .main-nav a:hover{color:var(--text-main);}
+
+  .user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:var(--text-muted);
+  }
+  .user-avatar{
+    width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,#555,#333);
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;color:#fff;
+  }
+
+  .page-title{
+    text-align:center;
+    padding:36px 20px 30px;
+  }
+  .page-title h1{
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:0.5px;
+  }
+  .page-title h1 span{color:var(--red);}
+  .page-title p{
+    color:var(--text-muted);
+    font-size:15px;
+    margin-top:8px;
+    font-weight:400;
+  }
+
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===================== SECCIÓN 2: PASO 1 - DATOS DEL CLIENTE ===================== */
+  .panel{
+    background:var(--bg-panel);
+    border:1px solid var(--border-color);
+    border-radius:10px;
+    padding:26px 28px;
+    margin-bottom:26px;
+  }
+  .panel-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:0.5px;
+    color:#e8e8e8;
+    margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .panel-title .icon{opacity:0.6;font-size:18px;}
+
+  .form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px 28px;
+  }
+  .field label{
+    display:block;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:8px;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    background:var(--bg-input);
+    border:1px solid var(--border-color);
+    border-radius:6px;
+    padding:11px 12px;
+    color:var(--text-main);
+    font-size:14px;
+    outline:none;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--red);
+  }
+  .field input::placeholder{color:var(--text-faint);}
+
+  /* ===================== SECCIÓN 3: PASO 2 + PASO 3 ===================== */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    align-items:start;
+    margin-bottom:26px;
+  }
+  .step-fields{display:flex;flex-direction:column;gap:16px;}
+
+  select.field-select{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><polygon points='0,0 10,0 5,6' fill='%239a9a9d'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+  }
+
+  /* Recibo */
+  .recibo-box{
+    background:#f2f0ec;
+    color:#222;
+    border-radius:8px;
+    padding:22px 24px;
+    margin-bottom:18px;
+  }
+  .recibo-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:2px solid #c62828;
+    padding-bottom:12px;
+    margin-bottom:14px;
+  }
+  .recibo-logo{
+    font-size:16px;
+    font-weight:800;
+    color:#1a1a1a;
+  }
+  .recibo-logo span{color:var(--red);}
+  .recibo-sub{font-size:10.5px;color:#666;margin-top:4px;}
+  .recibo-title{
+    text-align:right;
+  }
+  .recibo-title h3{
+    font-size:16px;
+    color:#c62828;
+    letter-spacing:1px;
+  }
+  .recibo-title p{font-size:10px;color:#888;}
+
+  .recibo-id{
+    font-size:10px;
+    color:#999;
+    margin-bottom:14px;
+    letter-spacing:0.5px;
+  }
+  .recibo-fecha{
+    text-align:right;
+    font-size:11px;
+    color:#666;
+    margin-bottom:16px;
+  }
+  .recibo-cliente{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:14px;
+    color:#111;
+  }
+  .recibo-linea{
+    font-size:11.5px;
+    color:#555;
+    margin-bottom:6px;
+    line-height:1.5;
+  }
+  .recibo-monto{
+    text-align:right;
+    font-size:18px;
+    font-weight:800;
+    color:#111;
+    margin:14px 0 26px;
+  }
+  .recibo-firmas{
+    display:flex;
+    justify-content:space-between;
+    font-size:10.5px;
+    color:#777;
+    padding-top:10px;
+  }
+  .recibo-firmas div{
+    border-top:1px solid #999;
+    padding-top:6px;
+    width:42%;
+    text-align:center;
+  }
+
+  .btn-generar{
+    width:100%;
+    background:var(--red);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:14px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    cursor:pointer;
+    text-transform:uppercase;
+  }
+  .btn-generar span{opacity:0.85;font-weight:400;text-transform:none;}
+  .btn-generar:hover{background:var(--red-dark);}
+
+  /* ===================== SECCIÓN 4: STOCK + SOPORTE ===================== */
+  .bottom-grid{
+    display:grid;
+    grid-template-columns:2.2fr 1fr;
+    gap:24px;
+    margin-bottom:0;
+  }
+  .stock-desc{
+    color:var(--text-muted);
+    font-size:13px;
+    margin-bottom:18px;
+  }
+  table.stock-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .stock-table thead th{
+    text-align:left;
+    color:var(--text-muted);
+    font-weight:600;
+    padding:10px 8px;
+    border-bottom:1px solid var(--border-color);
+  }
+  .stock-table thead tr:first-child th{
+    text-align:right;
+    color:var(--text-faint);
+    font-size:11px;
+    text-transform:uppercase;
+    border-bottom:none;
+    padding-bottom:2px;
+  }
+  .stock-table tbody td{
+    padding:10px 8px;
+    border-bottom:1px solid var(--border-color);
+    color:#ddd;
+  }
+  .stock-table tbody tr:last-child td{border-bottom:none;}
+  .stock-table td.precio{
+    text-align:right;
+    font-weight:700;
+    color:#fff;
+  }
+
+  .soporte-panel{
+    background:var(--bg-panel-2);
+    border:1px solid var(--border-color);
+    border-radius:10px;
+    padding:22px 24px;
+    font-size:13px;
+    color:var(--text-muted);
+    height:fit-content;
+  }
+  .soporte-panel h3{
+    color:#e8e8e8;
+    font-size:14px;
+    margin-bottom:12px;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+  }
+  .soporte-panel p{margin-bottom:6px;line-height:1.5;}
+
+  /* ===================== SECCIÓN 5: PIE DE PÁGINA ===================== */
+  footer{
+    text-align:center;
+    padding:26px 20px 34px;
+    color:var(--text-faint);
+    font-size:12px;
+    margin-top:30px;
+  }
+
+  @media (max-width:900px){
+    .form-grid,.two-col,.bottom-grid{grid-template-columns:1fr;}
+    .main-nav{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===================== SECCIÓN 1: BARRA NAVEGADOR + HEADER ===================== -->
+  <div class="browser-bar">
+    <div class="browser-dots"><span></span><span></span><span></span></div>
+    <div class="browser-url">autoelitemotors.com/empleyados/portal</div>
+  </div>
+
+  <header class="site-header">
+    <div class="logo">AutoElite <span>Motors [Red]</span></div>
+    <nav class="main-nav">
+      <a href="#">Panel Principal</a>
+      <a href="#">Registrar Cliente</a>
+      <a href="#">Generar Recibo</a>
+      <a href="#">Ver Inventario</a>
+      <a href="#">Soporte Técnico</a>
+    </nav>
+    <div class="user-box">
+      <div class="user-avatar">ER</div>
+      Elena Ruiz
+    </div>
+  </header>
+
+  <div class="page-title">
+    <h1>PORTAL INTERNO PARA EMPLEADOS <span>[Red]</span></h1>
+    <p>Gestión de Clientes y Recibos</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ===================== SECCIÓN 2: PASO 1 - DATOS DEL CLIENTE ===================== -->
+    <section class="panel">
+      <div class="panel-title">
+        <span>PASO 1: INGRESAR DATOS DEL CLIENTE</span>
+        <span class="icon">🚗</span>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Nombre Completo</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="field">
+          <label>DNI / CUIT</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="field">
+          <label>Teléfono de Contacto</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="">
+        </div>
+        <div class="field">
+          <label>Dirección Completa</label>
+          <input type="text" placeholder="">
+        </div>
+        <div class="field">
+          <label>Localidad</label>
+          <input type="text" placeholder="">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN 3: PASO 2 - DETALLES + PASO 3 - RESUMEN/RECIBO ===================== -->
+    <div class="two-col">
+
+      <!-- PASO 2 -->
+      <section class="panel">
+        <div class="panel-title">PASO 2: DETALLES DE LA OPERACIÓN</div>
+        <div class="step-fields">
+          <div class="field">
+            <label>Operación</label>
+            <select class="field-select">
+              <option>Seña</option>
+              <option>Pago Parcial</option>
+              <option>Pago Total</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Vehículo</label>
+            <select class="field-select">
+              <option>Toyota Hilux AF 123 BK - Toyota AF 456 OD</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Forma de Pago</label>
+            <select class="field-select">
+              <option>Pago</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Monto en Letras</label>
+            <input type="text" placeholder="">
+          </div>
+          <div class="field">
+            <label>Mercado / Importe</label>
+            <input type="text" placeholder="">
+          </div>
+        </div>
+      </section>
+
+      <!-- PASO 3 -->
+      <section class="panel">
+        <div class="panel-title">PASO 3: RESUMEN Y GENERAR RECIBO</div>
+
+        <div class="recibo-box">
+          <div class="recibo-head">
+            <div>
+              <div class="recibo-logo">AutoElite <span>Motors</span></div>
+              <div class="recibo-sub">Tel. +11 1223 2875<br>Buenos Aires, Argentina</div>
+            </div>
+            <div class="recibo-title">
+              <h3>RECIBO</h3>
+              <p>RECIBO N°</p>
+            </div>
+          </div>
+          <div class="recibo-id">RECIBO N° ______________</div>
+          <div class="recibo-fecha">Fecha ___ / ___ / 2023</div>
+          <div class="recibo-cliente">Juan Pérez</div>
+          <div class="recibo-linea">Forma de vender a hiraluto se comoran so la ngls comarale.</div>
+          <div class="recibo-linea">Resunete Oficial: $2.000.000,00</div>
+          <div class="recibo-monto">Monto oficial: $2.000.000,00</div>
+          <div class="recibo-firmas">
+            <div>Vendedor</div>
+            <div>Cliente</div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:16px;">
+          <label>OBSERVACIONES</label>
+          <textarea rows="2" placeholder=""></textarea>
+        </div>
+
+        <button class="btn-generar">GENERAR Y IMPRIMIR RECIBO (PDF) <span>[Red]</span></button>
+      </section>
+
+    </div>
+
+    <!-- ===================== SECCIÓN 4: STOCK DE VEHÍCULOS + NOTAS DE SOPORTE ===================== -->
+    <div class="bottom-grid">
+      <section class="panel">
+        <div class="panel-title">STOCK DE VEHÍCULOS <span style="color:var(--red);text-transform:none;">[Red]</span></div>
+        <p class="stock-desc">Actuante vehículos automóviles para referencia interno.</p>
+        <table class="stock-table">
+          <thead>
+            <tr>
+              <th colspan="5" style="text-align:left;">&nbsp;</th>
+            </tr>
+            <tr>
+              <th>Modelo</th>
+              <th>Año</th>
+              <th>Color</th>
+              <th>Dominio</th>
+              <th style="text-align:right;">Precio Empleado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Toyota AF</td><td>2016</td><td>Black</td><td>AF 456 D</td><td class="precio">$1.500.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF</td><td>2018</td><td>Black</td><td>AF 456 C</td><td class="precio">$1.300.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF</td><td>2019</td><td>Black</td><td>AF 456 C</td><td class="precio">$2.750.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF<br>123 BK</td><td>2020</td><td>Black</td><td>AF 456 C</td><td class="precio">$2.000.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF<br>456 BK</td><td>2020</td><td>Green</td><td>AF 456 C</td><td class="precio">$2.300.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF</td><td>2019</td><td>Grata</td><td>AF 456 C</td><td class="precio">$1.850.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF</td><td>2019</td><td>Brer</td><td>AF 456 C</td><td class="precio">$1.750.000</td>
+            </tr>
+            <tr>
+              <td>Toyota AF</td><td>2019</td><td>Blue</td><td>AF 456 C</td><td class="precio">$1.850.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <aside class="soporte-panel">
+        <h3>Notas de Soporte</h3>
+        <p>Contacto in intrversacion de auhoElite motors:</p>
+        <p>IT: +54 11 1223-2875</p>
+        <p>IT: +54 11 1223-2875</p>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- ===================== SECCIÓN 5: PIE DE PÁGINA ===================== -->
+  <footer>
+    Copyright 2026 AutoElite Motors. Solo para uso interno.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+#sale-form .field select{min-height:42px}#sale-form .form-actions{padding-top:2px}
+#sale-form .credit-fields{grid-column:1/-1;padding:16px;border:1px solid var(--border-color);border-radius:8px;background:var(--bg-panel-2)}#sale-form .credit-fields[hidden],#sale-form .field[hidden]{display:none}#sale-form .credit-summary{grid-column:1/-1;margin:0}

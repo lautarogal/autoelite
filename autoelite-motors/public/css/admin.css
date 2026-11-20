@@ -1,0 +1,8 @@
+/* Panel /admin: tarjeta de login centrada y bloques de campos según el tipo de empleado. */
+.admin-card{max-width:440px;margin-left:auto;margin-right:auto}
+.admin-form-single{grid-template-columns:1fr}
+
+
+#logout-btn{margin-left:6px}
+#lista-panel .actions button{background:none;border:0;cursor:pointer;font:inherit;padding:0 4px}
+#cancel-edit{margin-left:8px}

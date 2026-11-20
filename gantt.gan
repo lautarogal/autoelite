@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Concesionario proyect" company="" webLink="http://" view-date="2026-08-01" view-index="2" gantt-divider-location="351" resource-divider-location="300" version="3.3.3316" locale="es_MX">
+    <description/>
+    <view zooming-state="default:8" id="gantt-chart">
+        <field id="tpd15" name="Notes" width="20" order="0"/>
+        <field id="tpd3" name="Name" width="200" order="0"/>
+        <field id="tpd4" name="Begin date" width="75" order="1"/>
+        <field id="tpd5" name="End date" width="75" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <timeline><![CDATA[1,10,9,2,7,3,5,0,12,11,4]]></timeline>
+        <option id="color.recent"><![CDATA[#ff9900 #ffcc33]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="ar">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="" month="1" date="1" type="HOLIDAY"><![CDATA[New Year's Day]]></date>
+        <date year="" month="3" date="24" type="HOLIDAY"><![CDATA[Truth and Justice Memorial Day]]></date>
+        <date year="" month="4" date="2" type="HOLIDAY"><![CDATA[Malvinas Day]]></date>
+        <date year="" month="5" date="1" type="HOLIDAY"><![CDATA[Labour Day]]></date>
+        <date year="" month="5" date="25" type="HOLIDAY"><![CDATA[May Day Revolution]]></date>
+        <date year="" month="6" date="20" type="HOLIDAY"><![CDATA[National Flag Day]]></date>
+        <date year="" month="7" date="9" type="HOLIDAY"><![CDATA[Independence Day]]></date>
+        <date year="" month="12" date="8" type="HOLIDAY"><![CDATA[Immaculate Conception Day]]></date>
+        <date year="" month="12" date="25" type="HOLIDAY"><![CDATA[Christmas Day]]></date>
+        <date year="2025" month="3" date="3" type="HOLIDAY"><![CDATA[Carnival Monday]]></date>
+        <date year="2025" month="3" date="4" type="HOLIDAY"><![CDATA[Carnival Tuesday]]></date>
+        <date year="2025" month="4" date="18" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2025" month="6" date="16" type="HOLIDAY"><![CDATA[Martin Miguel de Guemes Day]]></date>
+        <date year="2025" month="8" date="18" type="HOLIDAY"><![CDATA[San Martin's Day]]></date>
+        <date year="2025" month="10" date="13" type="HOLIDAY"><![CDATA[Day of respect for cultural diversity]]></date>
+        <date year="2025" month="11" date="17" type="HOLIDAY"><![CDATA[National Sovereignty Day]]></date>
+        <date year="2020" month="2" date="24" type="HOLIDAY"><![CDATA[Carnival Monday]]></date>
+        <date year="2020" month="2" date="25" type="HOLIDAY"><![CDATA[Carnival Tuesday]]></date>
+        <date year="2020" month="3" date="23" type="HOLIDAY"><![CDATA[Truth and Justice Memorial Bridge Holiday]]></date>
+        <date year="2020" month="4" date="10" type="HOLIDAY"><![CDATA[Good Friday]]></date>
+        <date year="2020" month="6" date="15" type="HOLIDAY"><![CDATA[Martin Miguel de Guemes Day]]></date>
+        <date year="2020" month="6" date="20" type="HOLIDAY"><![CDATA[National Flag Day]]></date>
+        <date year="2020" month="7" date="10" type="HOLIDAY"><![CDATA[Independence Day Bridge Holiday]]></date>
+        <date year="2020" month="8" date="17" type="HOLIDAY"><![CDATA[San Martin's Day]]></date>
+        <date year="2020" month="10" date="12" type="HOLIDAY"><![CDATA[Day of respect for cultural diversity]]></date>
+        <date year="2020" month="11" date="23" type="HOLIDAY"><![CDATA[National Sovereignty Day]]></date>
+        <date year="2020" month="12" date="7" type="HOLIDAY"><![CDATA[Immaculate Conception Bridge Holiday]]></date>
+        <date year="2026" month="7" date="19" type="HOLIDAY"><![CDATA[Vacaciones de invierno]]></date>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="13df17965fc94aafb8d9e502f371c9fc" name="Definir objetivo" meeting="false" start="2026-04-17" duration="28" complete="0" expand="true">
+            <notes><![CDATA[Definir objetivo: Pensar en como desarrollar un sistema web para tal concesionaria de autos que permita mostrar los vehículos disponibles, facilitar la búsqueda de información y mejorar la comunicación entre los clientes y la concesionaria. 
+ 
+]]></notes>
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" uid="e7399507befa4d62bc193d90b659eb75" name="Investigar ejemplos" meeting="false" start="2026-05-29" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Investigar ejemplos: En este punto nos ponemos a investigar ejemplos de otros diseños de sistemas ya echos.]]></notes>
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" uid="3907e95b19b2485aa9aafa5420ca1e2c" name="Entrevistas" meeting="false" start="2026-06-18" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Entrevista: Realizar una entrevista con el dueño de la concesionaria para conocer las necesidades del sistema y definir las funciones que tendrá la página web, como mostrar autos disponibles, precios, imágenes y medios de contacto. 
+]]></notes>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" uid="138a6839c3574793a4f086ba31b058f6" name="Reunir contenido" meeting="false" start="2026-07-08" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Reunir contenido: Ya echa la entrevista, quedaria recopilar contenido e información de los autos de la concesionaria 
+]]></notes>
+            <depend id="4" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" uid="8ef4a380456342298ce4799fafefd246" name="Diseñar estructura y stack" meeting="false" start="2026-07-29" duration="21" complete="0" expand="true">
+            <notes><![CDATA[Diseñar estructuras: Diseñar la estructura de la pagina web de la concesionaria y seleccionar las tecnologías (stack) que se utilizarán para su desarrollo. 
+]]></notes>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" uid="00b524d4dad24548b1b62ff314d4ea8f" name="Crear base de datos" meeting="false" start="2026-08-27" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Crear base de datos: Crear y diseñar la base de datos para almacenar la información brindada de los vehículos, clientes y consultas de la concesionaria. 
+]]></notes>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" uid="40ba6b5bb08347e18e307d0ea852f387" name="Testeo de BD" color="#ff9900" meeting="false" start="2026-08-28" duration="13" complete="0" expand="true">
+            <notes><![CDATA[En esta tarea vamos a ir testeano y arreglando la base de datos para en el momento de la implementacion no haya errores
+]]></notes>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" uid="7ab3c4cee5bf40b8a3fea5b4e6a77d50" name="Backend" meeting="false" start="2026-09-16" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Back-end]]></notes>
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" uid="fd54756d9521457ca3b44201ff39c909" name="Testeo de Backend" color="#ff9900" meeting="false" start="2026-09-17" duration="13" complete="0" expand="true">
+            <notes><![CDATA[En esta tarea vamos a ir testeano y arreglando el backend para en el momento de la implementacion no haya errores]]></notes>
+            <depend id="11" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="11" uid="abfacc880d0148dbad4d3ca53bcf2a51" name="Frontend" meeting="false" start="2026-10-06" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Front-end
+]]></notes>
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" uid="8a54c92916094e85ba7c7f8921a51237" name="Testeo de Frontend" color="#ff9900" meeting="false" start="2026-10-07" duration="13" complete="0" expand="true">
+            <notes><![CDATA[En esta tarea vamos a ir testeano y arreglando el frontend para en el momento de la implementacion no haya errores]]></notes>
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" uid="b51d8130545a4014b2031aaa0f0ffe3a" name="Cargar contenido" meeting="false" start="2026-10-26" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Cargar contenido: Cargar y actualizar el contenido de la página web con información y características de los vehículos disponibles
+]]></notes>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" uid="04fe05697e39469c83a137dfe9a4c7b7" name="Testeo de cargar Contenido" color="#ff9900" meeting="false" start="2026-10-27" duration="13" complete="0" expand="true">
+            <notes><![CDATA[En esta tarea vamos a ir testeano y arreglando si al cargar el contenido se muestra bien cumpliendo la orden del cliente para en el momento de la implementacion no haya errores]]></notes>
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" uid="11dfa8e10e3c4bdca628c11e8e4437b2" name="Implementacion" meeting="false" start="2026-11-13" duration="14" complete="0" expand="true">
+            <notes><![CDATA[Implementacion: En esta tarea vamos a estar terminando y entregando la web para la consecionaria ]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="lauti"/>
+    </roles>
+</project>
